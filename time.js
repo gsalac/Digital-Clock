@@ -4,9 +4,6 @@ function showTime() {
     let minutes = currentTime.getMinutes();
     let seconds = currentTime.getSeconds();
     let meridiem = "AM";
-    const clockId = document.getElementById("clock");
-    
-    clockId.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
 
     if (hours > 12) {
         hours = hours - 12;
@@ -28,6 +25,9 @@ function showTime() {
     if (seconds < 10) {
         seconds = "0" + seconds;
     }
+
+    const clockId = document.getElementById("clock");
+    clockId.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
 
     setTimeout(showTime, 1000);
 }
